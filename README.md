@@ -25,7 +25,7 @@ With this:
 ## 4. Install @angular/cli on the server
 ## 5. Add a daemon with these settings
 
-command: ``` node dist/shades-angular/server/main.js ```\
+command: ``` node dist/YOUR_APP_NAME/server/main.js ```\
 directory: ``` home/forge/default ```\
 
 ## 6. Edit the deploy script to:
@@ -41,7 +41,7 @@ git pull origin $FORGE_SITE_BRANCH
 
 npm install
 
-ng build && ng run shades-angular:server
+ng build && ng run YOUR_APP_NAME:server
 
 echo "" | sudo -S supervisorctl restart all
 ```
