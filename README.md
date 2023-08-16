@@ -44,12 +44,12 @@ git pull origin $FORGE_SITE_BRANCH
 npm install
 
 ng build && ng run YOUR_APP_NAME:server
+
+echo "" | sudo -S supervisorctl restart all
 ```
 
 ## 7. set up cron job to check the status of node process: 
 ```
 */5 * * * * bash default/dist/shades-angular/server/check_node_process.sh
-```
-echo "" | sudo -S supervisorctl restart all
 ```
 
