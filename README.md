@@ -26,7 +26,7 @@ With this:
 ## 5. Add a daemon with these settings
 
 command: ``` node dist/YOUR_APP_NAME/server/main.js ```\
-directory: ``` home/forge/default ```\
+directory: ``` home/forge/default ```
 
 ## 6. Edit the deploy script to:
 ```
