@@ -3,7 +3,8 @@ Instructions for deploying angular universal/ssr to laravel forge
 
 ## 1. Provision a web server on Forge with php and nginx
 ## 2. Install the Angular ssr repository
-## 3. In the nginx file replace this:
+## 3. In the nginx file:
+Replace this:
 ```
    location / {
          try_files $uri $uri/ /index.php?$query_string;
