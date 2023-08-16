@@ -23,6 +23,8 @@ With this:
 ```
 
 ## 4. Install @angular/cli on the server
+npm i -g @angular/cli@latest
+
 ## 5. Add a daemon with these settings
 
 command: ``` node dist/YOUR_APP_NAME/server/main.js ```\
