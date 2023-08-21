@@ -2,8 +2,9 @@
 Instructions for deploying angular universal/ssr to laravel forge
 
 ## 1. Provision a web server on Forge with php and nginx
-## 2. Install the Angular ssr repository
-## 3. In the nginx file:
+## 2. Install nvm on server (for Angular v.16 use node 18.10.0) 
+## 3. Install the Angular ssr repository onto the server
+## 4. In the nginx file:
 Replace this:
 ```
    location / {
@@ -22,15 +23,15 @@ With this:
     }
 ```
 
-## 4. Install @angular/cli on the server
+## 5. Install @angular/cli on the server
 npm i -g @angular/cli@latest
 
-## 5. Add a daemon with these settings
+## 6. Add a daemon with these settings
 
 command: ``` node dist/YOUR_APP_NAME/server/main.js ```\
 directory: ``` home/forge/default ```
 
-## 6. Edit the deploy script to:
+## 7. Edit the deploy script to:
 ```
 cd /home/forge/default
 
@@ -48,8 +49,8 @@ ng build && ng run YOUR_APP_NAME:server
 echo "" | sudo -S supervisorctl restart all
 ```
 
-## 7. set up cron job to check the status of node process: 
+## 8. set up cron job to check the status of node process: 
 ```
-*/5 * * * * bash default/dist/shades-angular/server/check_node_process.sh
+*/5 * * * * bash default/dist/YOUR_APP_NAME/server/check_node_process.sh
 ```
 
