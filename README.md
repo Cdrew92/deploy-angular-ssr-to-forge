@@ -53,4 +53,23 @@ echo "" | sudo -S supervisorctl restart all
 ```
 */5 * * * * bash default/dist/YOUR_APP_NAME/server/check_node_process.sh
 ```
-
+## 9. Configure supervisor.sock permissions
+- make forge user group an owner
+```
+sudo chown root:forge /var/run/supervisor.sock
+sudo chmod 0770 /var/run/supervisor.sock
+```
+- edit supervisord.conf
+```
+sudo nano /etc/supervisor/supervisord.conf
+```
+```
+[unix_http_server]
+file=/var/run/supervisor.sock
+chmod=0770
+chown=root:supervisorusers
+```
+- restart supervisor
+```
+sudo service supervisor restart
+```
