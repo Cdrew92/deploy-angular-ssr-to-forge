@@ -47,6 +47,9 @@ npm install
 ng build && ng run YOUR_APP_NAME:server
 
 echo "" | sudo -S supervisorctl restart all
+
+## Flush node.js cache
+curl -u INSERT-NODE-API-KEY-HERE: http://localhost:4000/admin/flushCache
 ```
 
 ## 8. set up cron job to check the status of node process: 
@@ -67,7 +70,7 @@ sudo nano /etc/supervisor/supervisord.conf
 [unix_http_server]
 file=/var/run/supervisor.sock
 chmod=0770
-chown=root:supervisorusers
+chown=root:forge
 ```
 - restart supervisor
 ```
